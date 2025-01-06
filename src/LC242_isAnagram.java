@@ -10,8 +10,8 @@ public class LC242_isAnagram {
             freq[s2.charAt(i) - 'a']--;
         }
 
-        for (int i = 0; i < freq.length; i++) {
-            if (freq[i] != 0) {
+        for (int i : freq) {
+            if (i != 0) {
                 return false;
             }
         }
@@ -21,5 +21,6 @@ public class LC242_isAnagram {
     public static void main(String[] args) {
 
         System.out.println(new LC242_isAnagram().isAnagram("friend".toLowerCase(), "Finder".toLowerCase()));
+        System.out.println(new LC242_isAnagram().isAnagram("rat".toLowerCase(), "car".toLowerCase()));
     }
 }
