@@ -119,7 +119,8 @@ public class LC242_isAnagram {
 
 
 //тестирую возможность сравнения двух hashmap
-//public void compareTwoHashMaps() {
+
+// public void compareTwoHashMaps() {
 //    Map<Character, Integer> s1map = new HashMap<>();
 //    Map<Character, Integer> s2map = new HashMap<>();
 //
@@ -139,4 +140,4 @@ public class LC242_isAnagram {
 //
 //    System.out.println(s1map.equals(s2map));
 //}
-//
+
