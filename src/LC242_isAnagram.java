@@ -3,6 +3,7 @@ import java.util.Map;
 
 public class LC242_isAnagram {
 
+    //Optimal Approach: Count using a frequency array-------------------------------------------------------------------
     public boolean isAnagram(String s1, String s2) {
         if (s1.length() != s2.length())
             return false;
@@ -20,7 +21,7 @@ public class LC242_isAnagram {
         }
         return true;
     }
-
+    //------------------------------------------------------------------------------------------------------------------
     public boolean isAnagramWithHashMap(String s1, String s2) {
         Map<Character, Integer> s1Map = fillHashMapFromString(s1);
         Map<Character, Integer> s2Map = fillHashMapFromString(s2);
@@ -41,34 +42,12 @@ public class LC242_isAnagram {
         }
         return resMap;
     }
-
-    //тестирую возможность сравнения двух hashmap
-    public void compareTwoHashMaps() {
-        Map<Character, Integer> s1map = new HashMap<>();
-        Map<Character, Integer> s2map = new HashMap<>();
-
-        s1map.put('f', 1);
-        s1map.put('r', 1);
-        s1map.put('i', 1);
-        s1map.put('e', 1);
-        s1map.put('n', 1);
-        s1map.put('d', 1);
-
-        s2map.put('f', 1);
-        s2map.put('i', 1);
-        s2map.put('n', 1);
-        s2map.put('d', 1);
-        s2map.put('e', 1);
-        s2map.put('r', 1);
-
-        System.out.println(s1map.equals(s2map));
-    }
-
+    //------------------------------------------------------------------------------------------------------------------
     public static void main(String[] args) {
 
         System.out.println(new LC242_isAnagram().isAnagram("friend".toLowerCase(), "Finder".toLowerCase()));
         System.out.println(new LC242_isAnagram().isAnagram("rat".toLowerCase(), "car".toLowerCase()));
-        new LC242_isAnagram().compareTwoHashMaps();
+
         System.out.println(new LC242_isAnagram().isAnagramWithHashMap("friend".toLowerCase(), "Finder".toLowerCase()));
     }
 }
@@ -122,3 +101,27 @@ public class LC242_isAnagram {
 //        return true;
 //    }
 //}
+
+
+//тестирую возможность сравнения двух hashmap
+//public void compareTwoHashMaps() {
+//    Map<Character, Integer> s1map = new HashMap<>();
+//    Map<Character, Integer> s2map = new HashMap<>();
+//
+//    s1map.put('f', 1);
+//    s1map.put('r', 1);
+//    s1map.put('i', 1);
+//    s1map.put('e', 1);
+//    s1map.put('n', 1);
+//    s1map.put('d', 1);
+//
+//    s2map.put('f', 1);
+//    s2map.put('i', 1);
+//    s2map.put('n', 1);
+//    s2map.put('d', 1);
+//    s2map.put('e', 1);
+//    s2map.put('r', 1);
+//
+//    System.out.println(s1map.equals(s2map));
+//}
+//
