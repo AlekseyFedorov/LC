@@ -6,6 +6,7 @@ public class LC242_isAnagram {
 
     //Optimal Approach: Count using a frequency array ------------------------------------------------------------------
     public boolean isAnagram(String s1, String s2) {
+
         if (s1.length() != s2.length())
             return false;
 
@@ -24,8 +25,8 @@ public class LC242_isAnagram {
     }
     //------------------------------------------------------------------------------------------------------------------
     public boolean isAnagramWithHashMap(String s1, String s2) {
-        Map<Character, Integer> s1Map = fillHashMapFromString(s1);
-        Map<Character, Integer> s2Map = fillHashMapFromString(s2);
+        Map<Character, Integer> s1Map = fillHashMapFromString(s1.toLowerCase());
+        Map<Character, Integer> s2Map = fillHashMapFromString(s2.toLowerCase());
 
         return s1Map.equals(s2Map);
     }
@@ -54,7 +55,7 @@ public class LC242_isAnagram {
         return Arrays.equals(s1Arr, s2Arr);
     }
     //------------------------------------------------------------------------------------------------------------------
-    public static void main(String[] args) {
+    public static void main(final String... args) {
 
         //Optimal Approach: Count using a frequency array
         System.out.println(new LC242_isAnagram().isAnagram("friend".toLowerCase(), "Finder".toLowerCase()));
