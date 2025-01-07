@@ -22,8 +22,24 @@ public class LC242_isAnagram {
     }
 
     public boolean isAnagramWithHashMap(String s1, String s2) {
+        Map<Character, Integer> s1Map = fillHashMapFromString(s1);
+        Map<Character, Integer> s2Map = fillHashMapFromString(s2);
 
-        return true;
+        return s1Map.equals(s2Map);
+    }
+
+    public HashMap<Character, Integer> fillHashMapFromString(String s) {
+        HashMap<Character, Integer> resMap = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            Character c = s.charAt(i);
+            if (resMap.containsKey(c)) {
+                resMap.put(c, resMap.get(c) + 1);
+            } else {
+                resMap.put(c, 1);
+            }
+        }
+        return resMap;
     }
 
     //тестирую возможность сравнения двух hashmap
@@ -53,6 +69,7 @@ public class LC242_isAnagram {
         System.out.println(new LC242_isAnagram().isAnagram("friend".toLowerCase(), "Finder".toLowerCase()));
         System.out.println(new LC242_isAnagram().isAnagram("rat".toLowerCase(), "car".toLowerCase()));
         new LC242_isAnagram().compareTwoHashMaps();
+        System.out.println(new LC242_isAnagram().isAnagramWithHashMap("friend".toLowerCase(), "Finder".toLowerCase()));
     }
 }
 
