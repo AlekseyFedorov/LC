@@ -1,9 +1,10 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LC242_isAnagram {
 
-    //Optimal Approach: Count using a frequency array-------------------------------------------------------------------
+    //Optimal Approach: Count using a frequency array ------------------------------------------------------------------
     public boolean isAnagram(String s1, String s2) {
         if (s1.length() != s2.length())
             return false;
@@ -43,12 +44,26 @@ public class LC242_isAnagram {
         return resMap;
     }
     //------------------------------------------------------------------------------------------------------------------
+    public boolean isAnagramWithArrays(String s1, String s2) {
+        char[] s1Arr = s1.toCharArray();
+        char[] s2Arr = s2.toCharArray();
+
+        Arrays.sort(s1Arr);
+        Arrays.sort(s2Arr);
+
+        return Arrays.equals(s1Arr, s2Arr);
+    }
+    //------------------------------------------------------------------------------------------------------------------
     public static void main(String[] args) {
 
+        //Optimal Approach: Count using a frequency array
         System.out.println(new LC242_isAnagram().isAnagram("friend".toLowerCase(), "Finder".toLowerCase()));
+        //false
         System.out.println(new LC242_isAnagram().isAnagram("rat".toLowerCase(), "car".toLowerCase()));
-
+        //Better Approach: Count using two HashMaps
         System.out.println(new LC242_isAnagram().isAnagramWithHashMap("friend".toLowerCase(), "Finder".toLowerCase()));
+        //Brute force Approach: Sorting
+        System.out.println(new LC242_isAnagram().isAnagramWithArrays("friend".toLowerCase(), "Finder".toLowerCase()));
     }
 }
 
