@@ -52,6 +52,8 @@ public class LC242_isAnagram {
         Arrays.sort(s1Arr);
         Arrays.sort(s2Arr);
 
+
+
         return Arrays.equals(s1Arr, s2Arr);
     }
     //------------------------------------------------------------------------------------------------------------------
