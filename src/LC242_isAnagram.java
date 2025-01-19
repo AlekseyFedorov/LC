@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LC242_isAnagram {
+public class  LC242_isAnagram {
 
     //Optimal Approach: Count using a frequency array ------------------------------------------------------------------
     public boolean isAnagram(String s1, String s2) {
